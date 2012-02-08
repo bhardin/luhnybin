@@ -6,8 +6,16 @@ class LuhnBin
   end
     
   def mask(line)
-    return line
+    line.gsub(/[0-9]/) do | digits |
+      mask_cc(digits)
+    end
   end
+  
+  private
+  def mask_cc(digits)
+    return digits.length
+  end
+  
 end
 
 LuhnBin = LuhnBin.new
