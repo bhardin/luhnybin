@@ -1,6 +1,6 @@
-require 'luhn'
+require './luhn.rb'
 
-class luhnbin
+class LuhnBin
   def initialize
     @luhn = Luhn.new
   end
@@ -10,9 +10,9 @@ class luhnbin
   end
 end
 
-luhnybin = LuhnyBin.new
+LuhnBin = LuhnBin.new
 
 STDIN.each do |line|
-  STDOUT << luhnybin.mask(line)
+  STDOUT << LuhnBin.mask(line)
   STDOUT.flush
 end
